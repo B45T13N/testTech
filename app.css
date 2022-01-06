@@ -1,0 +1,10 @@
+ul{
+    list-style: none;
+}
+canvas, p{
+    display: none;
+}
+canvas{
+    width: 800px;
+    height: 800px;
+}
