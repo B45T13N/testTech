@@ -35,8 +35,8 @@ function rechercheDonnee() {
                     affichage += '<div><p class="description" style="display: none;">' + data[i]["Description"] + '</p>'
                     affichage += '<p class="energie" style="display: none;"> Type d\'énergie : ' + data[i]["Energie"] + '</p>'
                     affichage += '<p class="carrosserie" style="display: none;"> Type de carrosserie : ' + data[i]["Carrosserie"] + '</p>'
-                    affichage += '<canvas id="myChart' + i + '" class="canvasList" style="display: none;"></canvas></div> </li>';
-                    affichage += '<input type="button" class="btnDetail btn btn-primary" style="display: none;" id="'+data[i].Nom+'" value ="Plus de détails">'
+                    affichage += '<canvas id="myChart' + i + '" class="canvasList" style="display: none;"></canvas></div>';
+                    affichage += '<input type="button" class="btnDetail btn btn-primary" style="display: none;" id="'+data[i].Nom+'" value ="Plus de détails"></li>'
                     tabTime[i] = data[i]["Courbe d'accélération"]["time"];
                     tabAcceleration[i] = data[i]["Courbe d'accélération"]["Accélération"];
                     cpt = data.length;
@@ -44,7 +44,6 @@ function rechercheDonnee() {
                 affichage += '</ul>';
                 document.querySelector('#affichageVoiture').innerHTML = affichage;
                 var btnsDetail = document.querySelectorAll('input.btnDetail');
-                console.log(btnsDetail);
                 btnsDetail.forEach(btn => btn.addEventListener('click', function (){onClickAfficheDetail(btn.id)}));
                 initTabs();
                 affichageDetail();
@@ -130,7 +129,7 @@ function affichageDetail() {
             let description = document.querySelector('li#'+id+' > div > p.description');
             let carosserie = document.querySelector('li#'+id+' > div > p.carrosserie');
             let energie = document.querySelector('li#'+id+' > div > p.energie');
-            let btn = document.querySelector('input.btnDetail');
+            let btn = document.querySelector('li#'+id+' > input.btnDetail');
             if(canva.style.display === 'none' || description.style.display === 'none' || carosserie.style.display === 'none' || energie.style.display === 'none') {
                 canva.style.display = 'block';
                 description.style.display = 'block';
@@ -237,8 +236,8 @@ function onClickAfficheListeFiltre(){
                             affichage += '<div><p class="description" style="display: none;">' + data[i]["Description"] + '</p>'
                             affichage += '<p class="energie" style="display: none;"> Type d\'énergie : ' + data[i]["Energie"] + '</p>'
                             affichage += '<p class="carrosserie" style="display: none;"> Type de carrosserie : ' + data[i]["Carrosserie"] + '</p>'
-                            affichage += '<canvas id="myChart' + tmpCpt + '" class="canvasList" style="display: none;"></canvas></div> </li>';
-                            affichage += '<input type="button" class="btn btn-primary btnDetail" style="display: none;" id="'+data[i].Nom+'" value="Plus de détails">'
+                            affichage += '<canvas id="myChart' + tmpCpt + '" class="canvasList" style="display: none;"></canvas></div>';
+                            affichage += '<input type="button" class="btn btn-primary btnDetail" style="display: none;" id="'+data[i].Nom+'" value="Plus de détails"> </li>'
                             tabTime[i] = data[i]["Courbe d'accélération"]["time"];
                             tabAcceleration[i] = data[i]["Courbe d'accélération"]["Accélération"];
                             tmpCpt ++;
