@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Test technique</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
     <h1 id="titre">Test technique</h1>
+    <input type="button" value="Afficher la liste" class="btn btn-primary" id="btnAffiche">
+    <section id="recherche">
+        <form action="" method="get">
+            <div class="champsSelect">
+                <div class="select">
+                    <label for="listeSelectDetail">Voiture à rechercher</label>
+                    <select class="form-select" name="listeSelect" id="listeSelectDetail">
+                        <option value="">Sélectionner la voiture à rechercher</option>
+                    </select>
+                    <input type="button" id="btnRechercheDetail" value="Détail de ce véhicule" class="btn btn-primary">
+                </div>
+                <div class="select">
+                    <label for="listeSelectEnergie">Energie rechercher</label>
+                    <select class="form-select" name="listeSelectEnergie" id="listeSelectEnergie">
+                        <option value="">Sélectionner l'énergie à rechercher</option>
+                    </select>
+                    <input type="button" id="btnRecherche" value="Rechercher" class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+    </section>
     <section id="affichageVoiture"></section>
     <script src="chart.min.js"></script>
     <script src="script.js"></script>

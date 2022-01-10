@@ -1,10 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap');
+
+html, body{
+    width: 100%;
+    font-family: 'Luxurious Roman', cursive;
+}
+
+body{
+    width: 80%;
+    margin: 0 auto;
+    background: #9ccadc;
+}
+
 ul{
     list-style: none;
 }
-canvas, p{
-    display: none;
+
+li, section{
+    margin: 40px 0;
 }
+
+li{
+     border-bottom: solid black 1px;
+     padding-bottom: 5px;
+     margin-right: 5px;
+ }
+
+
 canvas{
     width: 800px;
-    height: 800px;
+    background: #ccc;
+}
+
+.canvasList{
+    width: 400px;
+    height: 400px;
+}
+
+article{
+    width: 100%;
+}
+
+article, ul{
+    background: rgba(35, 79, 100, 0.7);
+    border: solid #001e41 2px ;
+    border-radius: 30px;
+}
+
+article{
+    padding: 50px;
+}
+
+#detail{
+    width: 400px;
+}
+
+.champsSelect{
+    width: 70%;
+    display: flex;
+}
+
+.champsSelect > div {
+    margin-right: 10px;
+}
+
+select{
+    display: block;
 }
